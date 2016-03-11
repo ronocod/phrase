@@ -19,7 +19,6 @@ import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.widget.TextView;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -63,7 +62,7 @@ public class PhraseTest {
     try {
       from("{");
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
@@ -79,7 +78,7 @@ public class PhraseTest {
     try {
       from("hi { {age}.");
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
@@ -123,7 +122,7 @@ public class PhraseTest {
     try {
       gender.format();
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
@@ -131,7 +130,7 @@ public class PhraseTest {
     try {
       gender.put("bogusKey", "whatever");
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
@@ -139,7 +138,7 @@ public class PhraseTest {
     try {
       from("illegal {} pattern");
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
@@ -147,7 +146,7 @@ public class PhraseTest {
     try {
       from("blah {NoUppercaseAllowed}");
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
@@ -160,7 +159,7 @@ public class PhraseTest {
     try {
       from("{_foo}");
       fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException e) {
+    } catch (IllegalArgumentException ignored) {
     }
   }
 
